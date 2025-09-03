@@ -1,0 +1,62 @@
+/* =============================
+   GardenPlanner Stylesheet
+   ============================= */
+
+/* Reset / base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7f9;
+    color: #222;
+    line-height: 1.5;
+}
+
+/* Header */
+.gp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e7d32;
+    color: #fff;
+    padding: 0.75rem 1rem;
+}
+
+.gp-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Nav */
+.gp-nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.gp-btn {
+    background-color: #4caf50;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+    .gp-btn:hover {
+        background-color: #43a047;
+    }
+
+/* App container */
+.gp-app {
+    padding: 1rem;
+}
+
+/* Utility classes */
+.hidden {
+    display: none !important;
+}
