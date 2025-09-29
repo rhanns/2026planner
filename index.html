@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Garden Planner</title>
+
+  <!-- React UMD builds -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-gray-100">
+  <div id="root"></div>
+
+  <!-- Core scripts -->
+  <script src="./init.js"></script>
+  <script src="./data.js"></script>
+  <script src="./utils.js"></script>
+  <script src="./gardenLogic.js"></script>
+
+  <!-- Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Views -->
+  <script type="text/babel" data-presets="react" src="./AnalyticsView.jsx"></script>
+  <script type="text/babel" data-presets="react" src="./PlannerView.jsx"></script>
+  <script type="text/babel" data-presets="react" src="./PlantDatabaseView.jsx"></script>
+  <script type="text/babel" data-presets="react" src="./BedCreatorView.jsx"></script>
+  <script type="text/babel" data-presets="react" src="./OrchardView.jsx"></script>
+  <script type="text/babel" data-presets="react" src="./WeatherView.jsx"></script>
+  <script type="text/babel" data-presets="react" src="./App.jsx"></script>
+</body>
+</html>

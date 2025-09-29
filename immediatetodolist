@@ -1,0 +1,70 @@
+Claude generated TODO list to unfuck the files and set everything correctly because once you're hooked on AI you can't unhook
+
+
+# Garden App Cleanup To-Do List
+
+## **Priority 1: Fix the Data Layer (Start Here)**
+
+### 1. **Consolidate Migration Logic** ⚡ *~30 mins*
+- [ ] Pick ONE approach: either `dataSchema.js` cleanBed() OR `gardenLogic.js` migrateBeds()
+- [ ] Delete the other one completely
+- [ ] Test that data still loads correctly
+
+### 2. **Update Initial Data Format** ⚡ *~15 mins* 
+- [ ] Convert `data.js` to use new format directly:
+  ```javascript
+  // Change from:
+  "current_crop": null, "empty": true
+  // To:
+  "plans": { "spring": null, "fall": null }
+  ```
+- [ ] Remove all legacy fields: `current_crop`, `date_planted`, `expected_harvest`, `expected_yield`, `empty`
+
+### 3. **Clean Up Schema Constants** ⚡ *~10 mins*
+- [ ] Remove `BED_SCHEMA`, `PLAN_SCHEMA`, `HISTORY_ENTRY_SCHEMA` from `dataSchema.js` if they're not actually used for validation
+- [ ] Or convert them to actual validation functions if you want to keep them
+
+## **Priority 2: Consolidate Business Logic**
+
+### 4. **Centralize Season Logic** ⚡ *~20 mins*
+- [ ] Create one `getValidSeasons(bed)` function in `gardenLogic.js`
+- [ ] Replace all the scattered `seasonType` and season determination code with this function
+- [ ] Update `PlannerView.jsx` to use it
+
+### 5. **Clean Up Batch Operations** ⚡ *~15 mins*
+- [ ] Move `createBatchPlan()` and `applyBatchOperation()` functions to where they're actually used
+- [ ] Or delete them if they're not being used at all
+
+## **Priority 3: File Organization**
+
+### 6. **Separate Data from Logic** *~45 mins*
+- [ ] Move all data transformation/cleaning functions to `dataSchema.js`
+- [ ] Keep only pure business calculations in `gardenLogic.js`
+- [ ] Move validation functions (`validateBed`, `validatePlan`) to `dataSchema.js`
+
+### 7. **Clean Up Import/Export** *~20 mins*
+- [ ] Test if `exportAppData()` and `importAppData()` actually work with current data structure
+- [ ] Fix or remove them if broken
+- [ ] Move them to their own file if they're large
+
+## **Priority 4: Code Cleanup**
+
+### 8. **Remove Dead Code** *~30 mins*
+- [ ] Search for any functions that aren't actually called anywhere
+- [ ] Remove commented-out code blocks
+- [ ] Clean up any console.log statements
+
+### 9. **Fix Inconsistencies** *~20 mins*
+- [ ] Standardize property names (some places use `plants_per_bed`, others might use different names)
+- [ ] Make sure all date handling is consistent (ISO strings vs Date objects)
+
+## **Priority 5: Testing & Validation**
+
+### 10. **Test Core Functions** *~30 mins*
+- [ ] Manually test that you can still create/edit/delete garden plans
+- [ ] Test data export/import if you kept those functions
+- [ ] Verify that the weekly planner still works
+
+---
+
+**This will eliminate the biggest sources of confusion and redundancy.**
