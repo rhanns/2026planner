@@ -219,45 +219,46 @@ function App() {
         <div className="p-4 max-w-6xl mx-auto">
             <div className="mb-4 flex items-center justify-between">
                 <h1 className="text-2xl font-bold">Garden Planner</h1>
-                <div className="inline-flex rounded overflow-hidden border">
-                    <button 
-                        className={"px-3 py-1 text-sm " + (tab === "planner" ? "bg-gray-200" : "bg-white hover:bg-gray-50")} 
-                        onClick={() => setTab("planner")}
-                    >
-                        Planner
-                    </button>
-                    <button 
-                        className={"px-3 py-1 text-sm " + (tab === "analytics" ? "bg-gray-200" : "bg-white hover:bg-gray-50")} 
-                        onClick={() => setTab("analytics")}
-                    >
-                        Analytics
-                    </button>
-                    <button 
-                        className={"px-3 py-1 text-sm " + (tab === "database" ? "bg-gray-200" : "bg-white hover:bg-gray-50")} 
-                        onClick={() => setTab("database")}
-                    >
-                        Plant Database
-                    </button>
-                    {/* NEW TABS */}
-                    <button 
-                        className={"px-3 py-1 text-sm " + (tab === "bedcreator" ? "bg-gray-200" : "bg-white hover:bg-gray-50")} 
-                        onClick={() => setTab("bedcreator")}
-                    >
-                        Bed Creator
-                    </button>
-                    <button 
-                        className={"px-3 py-1 text-sm " + (tab === "orchard" ? "bg-gray-200" : "bg-white hover:bg-gray-50")} 
-                        onClick={() => setTab("orchard")}
-                    >
-                        Orchard
-                    </button>
-                    <button 
-                        className={"px-3 py-1 text-sm " + (tab === "weather" ? "bg-gray-200" : "bg-white hover:bg-gray-50")} 
-                        onClick={() => setTab("weather")}
-                    >
-                        Weather
-                    </button>
-                </div>
+<div className="rounded border">
+  <div className="flex gap-2 overflow-x-auto whitespace-nowrap p-1">
+    <button 
+      className={"inline-flex shrink-0 px-3 py-1 text-sm " + (tab === "planner" ? "bg-gray-200" : "bg-white hover:bg-gray-50")} 
+      onClick={() => setTab("planner")}
+    >
+      Planner
+    </button>
+    <button 
+      className={"inline-flex shrink-0 px-3 py-1 text-sm " + (tab === "analytics" ? "bg-gray-200" : "bg-white hover:bg-gray-50")} 
+      onClick={() => setTab("analytics")}
+    >
+      Analytics
+    </button>
+    <button 
+      className={"inline-flex shrink-0 px-3 py-1 text-sm " + (tab === "database" ? "bg-gray-200" : "bg-white hover:bg-gray-50")} 
+      onClick={() => setTab("database")}
+    >
+      Plant Database
+    </button>
+    <button 
+      className={"inline-flex shrink-0 px-3 py-1 text-sm " + (tab === "bedcreator" ? "bg-gray-200" : "bg-white hover:bg-gray-50")} 
+      onClick={() => setTab("bedcreator")}
+    >
+      Bed Creator
+    </button>
+    <button 
+      className={"inline-flex shrink-0 px-3 py-1 text-sm " + (tab === "orchard" ? "bg-gray-200" : "bg-white hover:bg-gray-50")} 
+      onClick={() => setTab("orchard")}
+    >
+      Orchard
+    </button>
+    <button 
+      className={"inline-flex shrink-0 px-3 py-1 text-sm " + (tab === "weather" ? "bg-gray-200" : "bg-white hover:bg-gray-50")} 
+      onClick={() => setTab("weather")}
+    >
+      Weather
+    </button>
+  </div>
+</div>
             </div>
             {tab === "planner" ? (
                 <PlannerView 
